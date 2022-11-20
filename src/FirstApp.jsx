@@ -4,7 +4,7 @@ const cuadrado = (n)=>{
     return n*n;
 }
 
-export const FirstApp = ({title,num=2})=>{ 
+export const FirstApp = ({title, subTitle, name})=>{ 
 
     if (!title){
         throw new Error('Debe enviar el título.');
@@ -12,18 +12,15 @@ export const FirstApp = ({title,num=2})=>{
 
     return (
         <>
-            <h1>Sergio App!!!</h1>
-            <p>El cuadrado es: {cuadrado(num)}</p>
+            <h1 data-testid="test-title">{ title }</h1>
+            <p>{ subTitle }</p>
+            <p>{ subTitle }</p>
+            <p> { name }</p>
         </>
     );
 }
 
 FirstApp.propTypes={
    title: PropTypes.string.isRequired,
-   num: PropTypes.number.isRequired,
-}
-
-FirstApp.defaultPropes={
-    title: "No hay título",
-    num: 2,
+   subtitle: PropTypes.string
 }
